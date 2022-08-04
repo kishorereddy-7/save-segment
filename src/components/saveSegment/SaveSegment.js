@@ -67,25 +67,11 @@ class SaveSegment extends Component {
     }
   }
 
-  sendSchema = () => {
-      fetch('https://webhook.site/', {
-          method: "POST",
-          mode: "cors",
-          body: JSON.stringify({"hello": "hello"})
-      })
-      .then(() => {
-          console.log("i got")
-      })
-      .catch(() => {
-          console.log("let's see")
-      })
-  }
-
   render() {
 
     const schemaNodes = this.state.schemaList.map(this.getSchema)
     const footer = (<S.FooterWrapper className="mt-6 mb-6" >
-        <S.SaveSegButton className="mr-4" onClick={this.sendSchema} >Save the Segment</S.SaveSegButton>
+        <S.SaveSegButton className="mr-4" >Save the Segment</S.SaveSegButton>
         <S.CancelSegButton>Cancel</S.CancelSegButton>
     </S.FooterWrapper>)
 
